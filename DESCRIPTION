@@ -1,0 +1,22 @@
+Package: GEC
+Type: Package
+Title: Generalized Exponentiated Composite Distributions
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Bowen",
+           family = "Liu",
+           role = c("aut", "cre"),
+           email = "bowen.liu@unlv.edu"),
+    person(given = "Malwane M.A.",
+           family = "Ananda",
+           role = "aut"))
+Author: Bowen Liu [aut, cre], Malwane M.A. Ananda [aut]
+Maintainer: Bowen Liu <bowen.liu@unlv.edu>
+Description: The framework of the estimation, sampling, and hypotheses testing for two special distributions (Exponentiated Exponential-Pareto and Exponentiated Inverse Gamma-Pareto) within the family of Generalized Exponentiated Composite distributions.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+      stats,
+      mistr
+RoxygenNote: 7.2.1
