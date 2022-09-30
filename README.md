@@ -5,6 +5,7 @@ GEC is a package that provides a framework of the estimation, sampling, and hypo
 
 # Installation
 Please install the development version from Github as follows
+
 `devtools::install_github("liuaber/GEC")`
 
 # Usage
