@@ -7,7 +7,7 @@ GEC is a package that provides a framework of the estimation, sampling, and hypo
 Please install the development version from Github as follows:
 
 ```
-if(!require(devtools)){`
+if(!require(devtools)){
     install.packages("devtools")
     library(devtools)
 }
