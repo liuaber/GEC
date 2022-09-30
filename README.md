@@ -13,5 +13,3 @@ if(!require(devtools)){
 }
 devtools::install_github("liuaber/GEC")
 ```
-
-# Usage
