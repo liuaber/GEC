@@ -13,3 +13,10 @@ if(!require(devtools)){
 }
 devtools::install_github("liuaber/GEC")
 ```
+## Usage
+To use the package, load the package as follows:
+
+```
+library(GEC)
+```
+
