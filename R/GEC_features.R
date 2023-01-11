@@ -438,9 +438,9 @@ pdf_eigp = function(theta,eta,data){
   alpha = 0.308298
   a = alpha - k
   C=mistr::compdist((1/mistr::gammadist(shape = alpha,rate = (k*theta))), mistr::paretodist(scale = theta,shape = a), weights =c(1-c,c), breakpoints = theta)^(1/eta) #pareto(theta:scale;a:shape); gamma(beta = k*theta:rate; alpha:shape)
-  if (eta != 1){
+  if (eta != 1 && theta != 1){
     pdf_est = mistr::mistr_d(C,x = sort(data),log = FALSE)}
-  if (eta == 1){
+  if (eta == 1 || theta == 1){
     pdf_est = 0.711384*(0.144351*theta)^(0.308298)*(data^(eta))^(-0.308298-1)*exp(-0.144351*theta/(data^eta))/gamma(0.308298)*eta*data^(eta-1)*(data<=theta^(1/eta))+
       0.711384*(0.308298-0.144351)*(theta)^(0.308298-0.144351)/((data^(eta))^(0.308298-0.144351+1))*eta*(data)^(eta-1)*(data>theta^(1/eta))
   }
@@ -499,10 +499,10 @@ pdf_eep = function(theta,eta,data){
   c = 0.574
   alpha = 0.349976
   exp_pareto=mistr::compdist(mistr::expdist(rate = (alpha+1)/theta), mistr::paretodist(scale = theta,shape = alpha), weights = c(1-c,c), breakpoints = theta)^(1/eta) #pareto(theta:scale;a:shape); exp: rate = (alpha+1)/theta
-  if (eta != 1){
+  if (eta != 1 && theta != 1){
     pdf_est = mistr::mistr_d(exp_pareto,x = sort(data),log = FALSE)
   }
-  if (eta == 1){
+  if (eta == 1 || theta == 1){
     pdf_est = exp(log(c*(alpha+1)/theta*exp(-(alpha+1)/theta*(data^(eta)))*eta*data^(eta-1)*(data<=theta^(1/eta)) + c*alpha*theta^(alpha)/data^(eta*(alpha+1))*eta*data^(eta-1)*(data>theta^(1/eta))))
   }
   return(pdf_est)
